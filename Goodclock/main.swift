@@ -1,0 +1,3 @@
+import GoodclockApp
+
+GoodclockApp.main()
