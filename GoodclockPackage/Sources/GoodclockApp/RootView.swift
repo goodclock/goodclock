@@ -50,24 +50,6 @@ extension AutoHashable {
     }
 }
 
-@Observable
-class Editor: AutoHashable {
-    var clock: ClockModel
-    weak var delegate: (any EditorDelegate)?
-
-    init(clock: ClockModel) {
-        self.clock = clock
-    }
-}
-
-class ClockModel: Identifiable {
-    var title: String
-
-    init(title: String) {
-        self.title = title
-    }
-}
-
 struct RootView: View {
     @State var model: Model
 
@@ -94,25 +76,6 @@ struct RootView: View {
                     model.clockTapped(clock: clock)
                 }
             }
-        }
-    }
-}
-
-struct EditorView: View {
-    let editor: Editor
-
-    var body: some View {
-        VStack {
-            row
-            Spacer()
-        }
-    }
-
-    @ViewBuilder
-    var row: some View {
-        @Bindable var editor = editor
-        VStack {
-            TextField("", text: $editor.clock.title)
         }
     }
 }
