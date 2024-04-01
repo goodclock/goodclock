@@ -1,5 +1,5 @@
 import XCTest
-@testable import GoodclockPackage
+@testable import GoodclockApp
 
 final class GoodclockPackageTests: XCTestCase {
     func testExample() throws {
